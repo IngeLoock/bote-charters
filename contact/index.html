@@ -151,12 +151,17 @@
   <div class="loc-backdrop" data-loc-close></div>
   <div class="loc-panel">
     <button type="button" class="loc-close" data-loc-close aria-label="Close">&times;</button>
-    <div class="loc-map"><iframe src="https://www.google.com/maps?q=Brisbane+River,+Brisbane+QLD&output=embed" loading="lazy" title="Bote Charters cruising area, Brisbane" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    <div class="loc-bar">
-      <a href="../boat-hire-brisbane/index.html"><span class="lp">Brisbane River</span><span class="ls">City cruises and Story Bridge</span></a>
-      <a href="../boat-hire-gold-coast/index.html"><span class="lp">Gold Coast Broadwater</span><span class="ls">Surfers Paradise and Wavebreak Island</span></a>
-      <a href="../destinations/index.html"><span class="lp">Moreton Bay</span><span class="ls">Islands, swim stops and the Tangalooma Wrecks</span></a>
+    <div class="loc-map">
+      <iframe id="locFrame" src="https://www.google.com/maps?q=Brisbane+River,+Brisbane+QLD&output=embed" loading="lazy" title="Bote Charters cruising area" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="loc-pin" aria-hidden="true"><span>B</span></div>
+      <div class="loc-pin-label" id="locPinLabel">Brisbane River</div>
     </div>
+    <div class="loc-bar">
+      <button type="button" class="loc-tab active" data-query="Brisbane+River,+Brisbane+QLD" data-name="Brisbane River" data-href="../boat-hire-brisbane/index.html"><span class="lp">Brisbane River</span><span class="ls">City cruises and Story Bridge</span></button>
+      <button type="button" class="loc-tab" data-query="Gold+Coast+Broadwater,+Surfers+Paradise+QLD" data-name="Gold Coast Broadwater" data-href="../boat-hire-gold-coast/index.html"><span class="lp">Gold Coast Broadwater</span><span class="ls">Surfers Paradise and Wavebreak Island</span></button>
+      <button type="button" class="loc-tab" data-query="Tangalooma+Wrecks,+Moreton+Island+QLD" data-name="Moreton Bay" data-href="../destinations/index.html#moreton-bay"><span class="lp">Moreton Bay</span><span class="ls">Islands, swim stops and the Tangalooma Wrecks</span></button>
+    </div>
+    <a class="loc-explore" id="locExplore" href="../boat-hire-brisbane/index.html">Explore Brisbane River<svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H4M12 2v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
   </div>
 </div>
 <div class="staging">Staging preview only - design concept by Balar Media Group - not the live Bote Charters website</div>
@@ -168,7 +173,11 @@ hb.addEventListener('click',()=>{const o=!hb.classList.contains('open');hb.class
 mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hb.classList.remove('open');mm.classList.remove('open');document.body.style.overflow=''}));
 // LOCATION MODAL
 (function(){var lm=document.getElementById('locModal');if(!lm)return;
-function open(){lm.hidden=false;requestAnimationFrame(()=>lm.classList.add('open'));document.body.style.overflow='hidden';}
+var frame=document.getElementById('locFrame'),pinLabel=document.getElementById('locPinLabel'),exploreLink=document.getElementById('locExplore');
+var tabs=lm.querySelectorAll('.loc-tab');
+function setLoc(tab){tabs.forEach(function(t){t.classList.toggle('active',t===tab)});frame.src='https://www.google.com/maps?q='+tab.dataset.query+'&output=embed';pinLabel.textContent=tab.dataset.name;exploreLink.href=tab.dataset.href;exploreLink.textContent='Explore '+tab.dataset.name;}
+tabs.forEach(function(t){t.addEventListener('click',function(){setLoc(t);})});
+function open(){lm.hidden=false;requestAnimationFrame(()=>lm.classList.add('open'));document.body.style.overflow='hidden';setLoc(tabs[0]);}
 function close(){lm.classList.remove('open');document.body.style.overflow='';setTimeout(()=>{lm.hidden=true;},300);}
 document.querySelectorAll('[data-loc-open]').forEach(b=>b.addEventListener('click',()=>{if(mm.classList.contains('open')){hb.classList.remove('open');mm.classList.remove('open');}open();}));
 lm.querySelectorAll('[data-loc-close]').forEach(b=>b.addEventListener('click',close));
