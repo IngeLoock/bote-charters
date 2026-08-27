@@ -58,7 +58,8 @@ nav.scrolled{background:rgba(10,58,82,.97);padding:8px 48px;backdrop-filter:blur
 .hero{position:relative;height:82vh;min-height:520px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
 .hero.tall{height:100vh;height:100svh;min-height:640px}
 .hero img.bg,.hero video.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-.hero .scrim{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,22,30,.42) 0%,rgba(8,22,30,.10) 45%,rgba(8,22,30,.44) 100%)}
+.hero .scrim{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,22,30,.46) 0%,rgba(8,22,30,.32) 45%,rgba(8,22,30,.5) 100%)}
+.hero.zoom img.bg{transform:scale(1.22);object-position:center 42%}
 .hero .inner{position:relative;z-index:5;padding:0 28px;max-width:1060px}
 .hero .eyebrow{font-size:.76rem;color:var(--white);letter-spacing:.36em;text-shadow:0 1px 14px rgba(8,30,45,.4)}
 .hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.7rem,7vw,6.2rem);color:var(--white);line-height:1.04;margin-bottom:22px;letter-spacing:.01em;text-shadow:0 2px 24px rgba(8,30,45,.35)}
@@ -88,27 +89,37 @@ nav.scrolled{background:rgba(10,58,82,.97);padding:8px 48px;backdrop-filter:blur
 .lede{font-size:1rem;line-height:2;font-weight:300;color:var(--mid);max-width:680px;margin:0 auto}
 .sec-teal .lede{color:rgba(255,255,255,.75)}
 .rule{width:64px;height:1px;background:var(--gold);margin:38px auto;opacity:.75}
-/* FULL-BLEED BAND - photography kept true, light neutral scrims only */
-.band{position:relative;min-height:84vh;display:flex;align-items:center;overflow:hidden;padding:110px 48px}
-.band>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.band .scrim-l{position:absolute;inset:0;background:linear-gradient(98deg,rgba(8,24,32,.72) 0%,rgba(8,24,32,.45) 36%,rgba(8,24,32,.08) 66%,rgba(8,24,32,0) 100%)}
-.band .scrim-r{position:absolute;inset:0;background:linear-gradient(262deg,rgba(8,24,32,.72) 0%,rgba(8,24,32,.45) 36%,rgba(8,24,32,.08) 66%,rgba(8,24,32,0) 100%)}
-.band .scrim-c{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,24,32,.5),rgba(8,24,32,.34) 50%,rgba(8,24,32,.55))}
-.band .content{position:relative;z-index:5;max-width:1200px;margin:0 auto;width:100%}
-.band .copy{max-width:560px}
-.band.right .copy{margin-left:auto}
-.band.centre{text-align:center}
-.band.centre .copy{margin:0 auto;max-width:720px}
-.band h2{color:var(--white);text-shadow:0 1px 18px rgba(8,30,45,.3)}
-.band h2 em{color:var(--gold-light)}
-.band .eyebrow{color:var(--gold-light)}
-.band p{font-size:.95rem;line-height:2;color:rgba(255,255,255,.92);font-weight:300;margin-bottom:30px;text-shadow:0 1px 10px rgba(8,30,45,.35)}
+/* SPLIT BAND - plain background panel + photo panel, alternating sides */
+.band{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;overflow:hidden;background:var(--cream)}
+.band>img.bg{position:relative;width:100%;height:100%;min-height:460px;object-fit:cover;order:2}
+.band .scrim-l,.band .scrim-r{display:none}
+.band .content{position:relative;order:1;z-index:auto;max-width:none;margin:0;width:100%;display:flex;align-items:center;padding:76px 64px}
+.band .copy{max-width:520px;margin:0 auto}
+.band.right{background:var(--sand)}
+.band.right>img.bg{order:1}
+.band.right .content{order:2}
+.band.right .copy{margin:0 auto}
+.band h2{color:var(--teal)}
+.band h2 em{color:var(--teal-light)}
+.band .eyebrow{color:var(--gold-deep)}
+.band p{font-size:.95rem;line-height:2;color:var(--mid);font-weight:300;margin-bottom:30px}
 .band .rule-h{width:64px;height:1px;background:var(--gold);opacity:.8;margin:0 0 32px}
-.band.centre .rule-h{margin:0 auto 32px}
 .ticklist{list-style:none;display:flex;flex-direction:column;gap:13px;margin-bottom:34px}
-.ticklist li{display:flex;align-items:center;gap:16px;font-size:.84rem;letter-spacing:.08em;color:rgba(255,255,255,.95);font-weight:300;text-shadow:0 1px 8px rgba(8,30,45,.4)}
+.ticklist li{display:flex;align-items:center;gap:16px;font-size:.84rem;letter-spacing:.08em;color:var(--teal);font-weight:300}
 .ticklist li::before{content:'';width:26px;height:1px;background:var(--gold);flex-shrink:0}
+/* BAND.CENTRE - the big cinematic full-bleed moment keeps the old overlay treatment */
+.band.centre{display:flex;align-items:center;justify-content:center;text-align:center;padding:110px 48px;background:none;min-height:84vh}
+.band.centre>img.bg{position:absolute;inset:0;width:100%;height:100%;min-height:0;object-fit:cover;order:0}
+.band.centre .scrim-c{display:block;position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,24,32,.5),rgba(8,24,32,.34) 50%,rgba(8,24,32,.55))}
+.band.centre .content{order:0;padding:0;display:block;max-width:1200px;margin:0 auto}
+.band.centre .copy{margin:0 auto;max-width:720px}
+.band.centre h2{color:var(--white)}
+.band.centre h2 em{color:var(--gold-light)}
+.band.centre .eyebrow{color:var(--gold-light)}
+.band.centre p{color:rgba(255,255,255,.92)}
+.band.centre .rule-h{margin:0 auto 32px}
 .band.centre .ticklist{align-items:center}
+.band.centre .ticklist li{color:rgba(255,255,255,.95)}
 /* FULL-WIDTH IMAGE BREAK */
 .img-break{position:relative;height:62vh;min-height:400px;overflow:hidden}
 .img-break img{width:100%;height:100%;object-fit:cover}
@@ -330,7 +341,10 @@ details.f-col{}
  .grid-3{grid-template-columns:1fr 1fr}
  .gal{grid-template-columns:repeat(3,1fr)}
  .f-top{grid-template-columns:1fr 1fr}
- .band{min-height:72vh;padding:96px 32px}
+ .band.centre{min-height:72vh;padding:96px 32px}
+ .band:not(.centre){grid-template-columns:1fr}
+ .band:not(.centre)>img.bg{order:1;min-height:340px}
+ .band:not(.centre) .content{order:2;padding:56px 40px}
  .facts .wrap{grid-template-columns:repeat(4,1fr)}
  .cater-wrap{grid-template-columns:1fr;gap:38px}
  .cal-wrap{grid-template-columns:1fr;gap:38px}.cal-copy{order:-1}
@@ -347,8 +361,9 @@ details.f-col{}
  .cards-swipe .swipe-nav{display:flex}
  .hero{height:72svh;min-height:480px}
  .hero.tall{min-height:560px}
- .band{padding:76px 22px;min-height:auto}
- .band .scrim-l,.band .scrim-r{background:linear-gradient(to bottom,rgba(8,24,32,.62),rgba(8,24,32,.5))}
+ .band.centre{padding:76px 22px;min-height:auto}
+ .band:not(.centre) .content{padding:44px 22px}
+ .band:not(.centre)>img.bg{min-height:260px}
  .tile{height:340px}
  .tile.short{height:280px}
  .gal{grid-template-columns:1fr 1fr;gap:3px}
@@ -406,4 +421,16 @@ details.f-col{}
  html{scroll-behavior:auto}
  .scroll-cue{animation:none}
  .tile img,.swipe-track{transition:none;scroll-behavior:auto}
+ .reveal{opacity:1!important;transform:none!important;transition:none!important}
 }
+/* SCROLL REVEAL - subtle fade/rise on entry, staggered within a group */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);will-change:opacity,transform}
+.reveal.in-view{opacity:1;transform:translateY(0)}
+.card.reveal,.xlinks a.reveal{transition:border-color .3s,box-shadow .3s,background .2s,opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.reveal-group .reveal:nth-child(2){transition-delay:.08s}
+.reveal-group .reveal:nth-child(3){transition-delay:.16s}
+.reveal-group .reveal:nth-child(4){transition-delay:.24s}
+.reveal-group .reveal:nth-child(5){transition-delay:.32s}
+.reveal-group .reveal:nth-child(6){transition-delay:.4s}
+.reveal-group .reveal:nth-child(7){transition-delay:.48s}
+.reveal-group .reveal:nth-child(8){transition-delay:.56s}
