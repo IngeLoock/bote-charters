@@ -419,7 +419,7 @@ details.f-col{}
 @media(max-width:640px){
  .slider-m{display:flex!important;grid-template-columns:none!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;-webkit-overflow-scrolling:touch;padding-bottom:12px;scrollbar-width:none;overscroll-behavior-x:contain}
  .slider-m::-webkit-scrollbar{display:none}
- .slider-m>*{min-width:82%;scroll-snap-align:center;flex-shrink:0}
+ .slider-m>*{width:82%;min-width:82%;flex:0 0 82%;scroll-snap-align:center}
  .slider-m .tile{height:380px}
 }
 @media(prefers-reduced-motion:reduce){

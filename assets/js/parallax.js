@@ -6,14 +6,17 @@
   function update(){
     ticking = false;
     var vh = window.innerHeight || document.documentElement.clientHeight;
+    var isMobile = window.innerWidth <= 640;
+    var strength = isMobile ? 0.2 : 0.12;
+    var maxOffset = isMobile ? 100 : 60;
     for (var i = 0; i < els.length; i++){
       var el = els[i];
       var r = el.getBoundingClientRect();
       if (r.bottom < -200 || r.top > vh + 200) continue;
       var center = (r.top + r.height / 2) - vh / 2;
-      var offset = center * -0.12;
-      if (offset > 60) offset = 60;
-      if (offset < -60) offset = -60;
+      var offset = center * -strength;
+      if (offset > maxOffset) offset = maxOffset;
+      if (offset < -maxOffset) offset = -maxOffset;
       el.style.setProperty('--py', offset.toFixed(1) + 'px');
     }
   }
@@ -22,5 +25,6 @@
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
+  window.addEventListener('orientationchange', onScroll);
   update();
 })();
