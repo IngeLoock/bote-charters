@@ -22,7 +22,7 @@ a{color:inherit}
 .hero .btn:hover,.band.centre .btn:hover,.cta-band .btn:hover,.psum .btn:hover,button.btn:hover{opacity:1;background:var(--teal-mid);border-color:var(--teal-mid);color:var(--white)}
 /* NAV - three-column header over the hero: links | logo | links + enquire */
 nav#nav{position:absolute;top:0;left:0;right:0;z-index:100;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:26px 48px;background:linear-gradient(to bottom,rgba(10,58,82,.5),transparent)}
-.nav-logo img{height:46px;width:auto}
+.nav-logo img{height:38px;width:auto}
 .nav-side{display:flex;align-items:center;gap:clamp(20px,2.4vw,36px)}
 .nav-right{justify-content:flex-end}
 .nav-side>a,.nav-dd>a{font-size:12px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:#fff;text-decoration:none;white-space:nowrap;padding:12px 0;display:inline-flex;align-items:center;gap:7px;transition:opacity .25s}
@@ -381,7 +381,7 @@ details.f-col{}
 }
 @media(max-width:640px){
  nav#nav{padding:10px 14px}
- .nav-logo img{height:38px}
+ .nav-logo img{height:30px}
  .hero.has-facts{padding-bottom:84px}
  .hero-facts{left:22px;right:22px;padding:16px 0 20px}
  .hf-n{font-size:26px}
