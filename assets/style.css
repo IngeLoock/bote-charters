@@ -470,3 +470,26 @@ details.f-col{}
 .reveal-group .reveal:nth-child(6){transition-delay:.4s}
 .reveal-group .reveal:nth-child(7){transition-delay:.48s}
 .reveal-group .reveal:nth-child(8){transition-delay:.56s}
+
+/* DIRECT LINE - floating contact card, bottom right (minimises to a chip; stays a chip on mobile) */
+.dl{position:fixed;right:clamp(16px,2.2vw,32px);bottom:clamp(16px,2.2vw,32px);z-index:90;font-family:var(--sans);color:var(--ink)}
+.dl__card{position:relative;width:340px;max-width:calc(100vw - 32px);background:var(--sky);border-top:2px solid var(--steel);padding:26px 26px 22px;box-shadow:0 18px 50px rgba(32,47,59,.18);opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.dl.is-in .dl__card{opacity:1;transform:none}
+.dl__x{position:absolute;top:8px;right:8px;width:36px;height:36px;border:0;background:transparent;color:var(--steel);font-size:22px;line-height:1;cursor:pointer}
+.dl__x:hover{color:var(--ink)}
+.dl__id{display:flex;gap:14px;align-items:center;margin:0 24px 18px 0}
+.dl__face{flex:0 0 52px;width:52px;height:52px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.dl__face img{width:40px;height:auto;display:block}
+.dl__kicker{margin:0 0 4px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel);font-weight:400}
+.dl__line{margin:0;font-family:var(--serif);font-size:23px;line-height:1.15;color:var(--ink)}
+.dl__link{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-top:1px solid var(--line);font-size:15px;font-weight:300;color:var(--ink);text-decoration:none}
+.dl__link span{color:var(--steel);transition:transform .25s ease}
+.dl__link:hover span{transform:translateX(3px)}
+.dl__note{margin:12px 0 0;font-size:12px;color:var(--steel)}
+.dl__mini{display:none;align-items:center;gap:10px;padding:8px 18px 8px 8px;border:0;background:var(--ink);color:var(--white);font:inherit;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;box-shadow:0 10px 30px rgba(32,47,59,.25)}
+.dl__mini .dl__face{flex-basis:36px;width:36px;height:36px;background:var(--teal-mid)}
+.dl__mini .dl__face img{width:28px}
+.dl.is-min .dl__card{display:none}
+.dl.is-min .dl__mini{display:inline-flex}
+@media(max-width:640px){.dl__mini{padding:6px 14px 6px 6px;font-size:11px}}
+@media(prefers-reduced-motion:reduce){.dl__card{transition:none}}
