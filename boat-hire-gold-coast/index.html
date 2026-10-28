@@ -25,12 +25,12 @@
 <nav id="nav" aria-label="Main navigation">
   <div class="nav-side nav-left">
     <a href="../the-yacht/index.html">The Yacht</a>
-    <div class="nav-dd"><a href="../private-parties/index.html" aria-haspopup="true">Events<svg width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></a><div class="dd-panel"><a href="../private-parties/index.html">Private Parties</a><a href="../corporate-events/index.html">Corporate Events</a><a href="../birthdays-celebrations/index.html">Birthdays and Celebrations</a><a href="../hens-party/index.html">Hens Party</a><a href="../hens-bucks/index.html">Bucks Party</a><a href="../weddings/index.html">Weddings and Engagements</a><a href="../christmas-parties/index.html">Christmas Parties</a><a href="../riverfire/index.html">Riverfire Cruise</a><a href="../new-years-eve/index.html">New Year's Eve</a></div></div>
+    <div class="nav-dd"><a href="../private-parties/index.html" aria-haspopup="true">Events<svg width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></a><div class="dropdown"><div class="dd-panel"><a href="../private-parties/index.html">Private Parties</a><a href="../corporate-events/index.html">Corporate Events</a><a href="../birthdays-celebrations/index.html">Birthdays and Celebrations</a><a href="../hens-party/index.html">Hens Party</a><a href="../hens-bucks/index.html">Bucks Party</a><a href="../weddings/index.html">Weddings and Engagements</a><a href="../christmas-parties/index.html">Christmas Parties</a><a href="../riverfire/index.html">Riverfire Cruise</a><a href="../new-years-eve/index.html">New Year's Eve</a></div></div></div>
     <a href="../menu/index.html">Catering</a>
   </div>
   <a href="../index.html" class="nav-logo" aria-label="Bote Charters home"><img src="../assets/img/botelogo.png" alt="Bote Charters logo" width="180" height="97"></a>
   <div class="nav-side nav-right">
-    <div class="nav-dd"><a href="../destinations/index.html" aria-current="page" aria-haspopup="true">Destinations<svg width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></a><div class="dd-panel"><a href="../boat-hire-gold-coast/index.html">Boat Hire Gold Coast</a><a href="../boat-hire-brisbane/index.html">Boat Hire Brisbane</a><a href="../destinations/index.html#moreton-bay">Boat Hire Moreton Bay</a></div></div>
+    <div class="nav-dd"><a href="../destinations/index.html" aria-current="page" aria-haspopup="true">Destinations<svg width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></a><div class="dropdown"><div class="dd-panel"><a href="../boat-hire-gold-coast/index.html">Boat Hire Gold Coast</a><a href="../boat-hire-brisbane/index.html">Boat Hire Brisbane</a><a href="../destinations/index.html#moreton-bay">Boat Hire Moreton Bay</a></div></div></div>
     <a href="../pricing/index.html">Pricing</a>
     <a href="../faq/index.html">FAQs</a>
     <a href="../contact/index.html" class="nav-cta">Enquire</a>
@@ -193,6 +193,7 @@ dl.querySelector('.dl__x').addEventListener('click',close);
 dl.querySelector('.dl__mini').addEventListener('click',function(){try{sessionStorage.removeItem(KEY);}catch(e){}open();});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!dl.classList.contains('is-min'))close();});
 if(!min&&window.matchMedia('(min-width:600px)').matches){setTimeout(open,2000);}
+if(window.matchMedia('(max-width:640px)').matches){dl.classList.add('dl--wait');var sh=function(){if(scrollY>240){dl.classList.remove('dl--wait');removeEventListener('scroll',sh);}};addEventListener('scroll',sh,{passive:true});sh();}
 })();
 </script>
 <div class="staging">Staging preview only - design concept by Studio Loock - not the live Bote Charters website</div>
