@@ -22,7 +22,7 @@ a{color:inherit}
 /* MOCK BAR - sticky utility nav across the top, as in the client refresh */
 .mock-bar{position:sticky;top:0;z-index:120;height:42px;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 16px;background:var(--teal);color:#F1F6F9;font-family:var(--sans);font-size:12px;font-weight:400;letter-spacing:.08em;white-space:nowrap;overflow-x:auto;scrollbar-width:none}
 .mock-bar::-webkit-scrollbar{display:none}
-.mock-bar a{color:#F1F6F9;text-decoration:none;padding:5px 8px;transition:background .2s}
+.mock-bar a{color:#F1F6F9;text-decoration:none;padding:13px 8px;transition:background .2s}
 .mock-bar a:hover,.mock-bar a[aria-current]{background:rgba(255,255,255,.16);color:#fff}
 .mock-bar span{opacity:.6;text-transform:uppercase;letter-spacing:.18em;font-size:11px;margin-right:4px}
 /* NAV - three-column header over the hero: links | logo | links + enquire */
@@ -385,7 +385,9 @@ details.f-col{}
  .cal-wrap{grid-template-columns:1fr;gap:38px}.cal-copy{order:-1}
 }
 @media(max-width:640px){
- .mock-bar{justify-content:flex-start;padding:0 12px}
+ .mock-bar{justify-content:flex-start;padding:0 8px;gap:2px}
+ .mock-bar span{display:none}
+ .mock-bar a{padding:13px 10px}
  nav#nav{padding:10px 14px}
  .nav-logo img{height:30px}
  .hero.has-facts{padding-bottom:84px}
@@ -592,10 +594,12 @@ details.f-col{}
  .oc-track{padding-right:22px}
 }
 @media(max-width:640px){
- .glance{grid-template-columns:1fr 1fr}
- .glance li{padding:22px 0 22px 18px}
- .glance li:nth-child(odd){padding-left:0;border-left:0}
- .glance .g-label{padding-left:0}
+ .glance{grid-template-columns:1fr 1fr 1fr}
+ .glance li{padding:20px 0 22px 14px}
+ .glance li:nth-child(2){padding-left:0;border-left:0}
+ .glance .g-label{grid-column:1/-1;padding:0 0 14px;border-left:0}
+ .glance .g-v{font-size:26px}
+ .glance .g-s{font-size:10px;letter-spacing:.12em;margin-top:8px}
  .fd-head{flex-direction:column;align-items:flex-start}
  .fd-head .btn{margin-bottom:0}
  .fd-grid,.cr-grid,.steps{grid-template-columns:1fr}

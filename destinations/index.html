@@ -195,7 +195,7 @@ function close(){dl.classList.remove('is-in');dl.classList.add('is-min');try{ses
 dl.querySelector('.dl__x').addEventListener('click',close);
 dl.querySelector('.dl__mini').addEventListener('click',function(){try{sessionStorage.removeItem(KEY);}catch(e){}open();});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!dl.classList.contains('is-min'))close();});
-dl.classList.add('dl--wait');var sh=function(){if(scrollY>240){dl.classList.remove('dl--wait');removeEventListener('scroll',sh);if(!min&&window.matchMedia('(min-width:600px)').matches){setTimeout(open,1200);}}};addEventListener('scroll',sh,{passive:true});sh();
+dl.classList.add('dl--wait');var shown=false;var sh=function(){var past=scrollY>240;if(window.matchMedia('(max-width:640px)').matches){dl.classList.toggle('dl--wait',!past);return;}if(past&&!shown){shown=true;dl.classList.remove('dl--wait');if(!min){setTimeout(open,1200);}}};addEventListener('scroll',sh,{passive:true});sh();
 })();
 </script>
 <script>
