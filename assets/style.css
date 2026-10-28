@@ -535,6 +535,7 @@ details.f-col{}
 .fd-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:48px}
 .fd-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(35px,5vw,72px);line-height:1.06;letter-spacing:-.01em;color:var(--ink);margin:0}
 .fd-head .btn{margin-bottom:6px;white-space:nowrap}
+.fd-head p{margin:16px 0 0;font-size:15px;line-height:1.65;color:var(--mid);max-width:520px}
 .fd-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .fd-card{background:var(--white);display:flex;flex-direction:column}
 .fd-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
