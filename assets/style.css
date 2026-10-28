@@ -286,8 +286,8 @@ details.f-col{}
 .f-col>summary h4{margin-bottom:0}
 @media(min-width:641px){details.f-col>summary{cursor:default;pointer-events:none;margin-bottom:20px}details.f-col>ul{display:flex!important}}
 /* LOCATION BUTTON + MODAL */
-.nav-loc{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;gap:6px;font-family:var(--sans);font-size:.68rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--white);background:transparent;border:1px solid rgba(255,255,255,.8);padding:8px 15px;border-radius:0;cursor:pointer;transition:background .2s,color .2s;min-height:34px}
-.nav-loc:hover{background:var(--teal-mid);border-color:var(--teal-mid);color:var(--white)}
+.nav-loc{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;gap:7px;font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--white);background:transparent;border:1px solid rgba(255,255,255,.8);padding:9px 14px;border-radius:0;cursor:pointer;transition:background .4s cubic-bezier(.25,.46,.45,.94),color .4s cubic-bezier(.25,.46,.45,.94),border-color .4s cubic-bezier(.25,.46,.45,.94)}
+.nav-loc:hover{background:var(--white);border-color:var(--white);color:var(--ink)}
 .nav-loc svg{flex-shrink:0}
 .loc-modal{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .3s}
 .loc-modal.open{opacity:1}
