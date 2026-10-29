@@ -309,5 +309,6 @@ function upd(){prev.disabled=t.scrollLeft<8;next.disabled=t.scrollLeft+t.clientW
 [prev,next].forEach(function(b){b.addEventListener('click',function(){t.scrollBy({left:step()*(+b.dataset.dir),behavior:'smooth'});});});
 t.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();})();
 </script>
+<script src="../assets/js/typeset.js" defer></script>
 </body>
 </html>
