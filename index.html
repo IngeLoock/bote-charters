@@ -409,5 +409,28 @@ f.value=wd+' '+dt.getDate()+' '+mo+' '+dt.getFullYear();f.focus();})();
 </script>
 <script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a3107be9d86e5f1a',t:'MTc4NzcyMjY0MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script src="assets/js/parallax.js" defer></script>
 <script src="assets/js/typeset.js" defer></script>
+<script>
+// HERO TALLY: count up from 0 on every load, reload and back/forward return, desktop and mobile
+(function(){
+  var els=document.querySelectorAll('.hero-facts .hf-n');if(!els.length)return;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  els.forEach(function(el){if(!el.dataset.final)el.dataset.final=el.textContent.trim();});
+  function run(){
+    els.forEach(function(el){
+      var m=el.dataset.final.match(/^(\d+)(.*)$/);if(!m){return;}
+      var target=+m[1],suf=m[2];
+      if(reduce){el.textContent=el.dataset.final;return;}
+      el.textContent='0'+suf;
+      var t0=null,dur=1500+Math.min(target,80)*8;
+      function step(ts){if(t0===null)t0=ts;var p=Math.min((ts-t0)/dur,1),e=1-Math.pow(1-p,3);
+        el.textContent=Math.round(target*e)+suf;if(p<1)requestAnimationFrame(step);else el.textContent=el.dataset.final;}
+      requestAnimationFrame(step);
+    });
+  }
+  // pageshow fires on first load AND when the page is restored from the back/forward cache
+  window.addEventListener('pageshow',function(){setTimeout(run,250);});
+  if(document.readyState==='complete')setTimeout(run,250);
+})();
+</script>
 </body>
 </html>
