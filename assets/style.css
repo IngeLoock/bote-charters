@@ -124,8 +124,8 @@ nav#nav{position:absolute;top:42px;left:0;right:0;z-index:100;display:grid;grid-
 .sec-teal .lede{color:rgba(255,255,255,.82)}
 .rule{width:64px;height:1px;background:var(--line);margin:38px auto;opacity:1}
 /* SPLIT BAND - plain background panel + photo panel, alternating sides */
-.band{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;overflow:hidden;background:var(--cream)}
-.band>img.bg{position:relative;width:100%;height:100%;min-height:460px;max-height:640px;object-fit:cover;order:2}
+.band{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;overflow:hidden;background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.band>img.bg{position:relative;width:100%;height:100%;min-height:460px;max-height:640px;object-fit:cover;order:2;display:block}
 .band .scrim-l,.band .scrim-r{display:none}
 .band .content{position:relative;order:1;z-index:auto;max-width:none;margin:0;width:100%;display:flex;align-items:center;padding:76px 64px}
 .band .copy{max-width:520px;margin:0 auto}
@@ -199,8 +199,7 @@ nav#nav{position:absolute;top:42px;left:0;right:0;z-index:100;display:grid;grid-
 .psum .pfact .fl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);margin-top:4px;display:block}
 /* PRICING TABLE - two columns to one clean column on mobile */
 .ptable{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4px}
-.pcol{background:var(--white);border-top:1px solid var(--ink);box-shadow:none;border:1px solid var(--line);border-top:1px solid var(--ink)}
-.pcol.peak{border-top-color:var(--steel)}
+.pcol{background:var(--white);box-shadow:none;border:1px solid var(--line)}
 .pcol h3{font-family:var(--serif);font-size:2rem;font-weight:400;color:var(--ink);padding:34px 36px 4px}
 .pcol .season{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--steel);padding:0 36px 22px;display:block}
 .pcol .prow{display:flex;justify-content:space-between;gap:18px;padding:15px 36px;border-top:1px solid var(--line);font-size:15px;font-weight:300;color:var(--mid)}
@@ -211,13 +210,12 @@ nav#nav{position:absolute;top:42px;left:0;right:0;z-index:100;display:grid;grid-
 .pcol .pfoot{padding:24px 36px 34px}
 /* RATES MINI (event pages) */
 .rates-mini{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4px;text-align:center}
-.rmini{background:var(--white);padding:38px 26px;border:1px solid var(--line);border-top:1px solid var(--ink)}
-.rmini.peak{border-top-color:var(--steel)}
+.rmini{background:var(--white);padding:38px 26px;border:1px solid var(--line)}
 .rmini .rl{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--steel);display:block;margin-bottom:12px}
 .rmini .ra{font-family:var(--serif);font-size:2.8rem;font-weight:400;color:var(--ink);line-height:1}
 .rmini .rs{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);display:block;margin-top:10px}
 /* legacy stacked rates (kept for safety) */
-.rate{max-width:860px;margin:0 auto 3px;background:var(--white);padding:60px 56px;text-align:center;border-top:1px solid var(--ink)}
+.rate{max-width:860px;margin:0 auto 3px;background:var(--white);padding:60px 56px;text-align:center;border:1px solid var(--line)}
 .rate.dark{background:var(--teal);color:var(--white)}
 .rate h3{font-family:var(--serif);font-size:2rem;font-weight:400;color:var(--ink);margin-bottom:8px}
 .rate.dark h3{color:var(--white)}
@@ -488,7 +486,7 @@ details.f-col{}
 
 /* DIRECT LINE - floating contact card, bottom right (minimises to a chip; stays a chip on mobile) */
 .dl{position:fixed;right:clamp(16px,2.2vw,32px);bottom:clamp(16px,2.2vw,32px);z-index:90;font-family:var(--sans);color:var(--ink)}
-.dl__card{position:relative;width:340px;max-width:calc(100vw - 32px);background:var(--sky);border-top:2px solid var(--steel);padding:26px 26px 22px;box-shadow:0 18px 50px rgba(10,58,82,.18);opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.dl__card{position:relative;width:340px;max-width:calc(100vw - 32px);background:var(--sky);border:1px solid var(--line);padding:26px 26px 22px;box-shadow:0 18px 50px rgba(10,58,82,.18);opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
 .dl.is-in .dl__card{opacity:1;transform:none}
 .dl__x{position:absolute;top:8px;right:8px;width:36px;height:36px;border:0;background:transparent;color:var(--steel);font-size:22px;line-height:1;cursor:pointer}
 .dl__x:hover{color:var(--ink)}
@@ -664,7 +662,6 @@ p a:not(.btn),li a:not(.btn),.fine a{display:inline-block;padding:10px 0;margin:
 .menu-split .pcol{display:flex;flex-direction:column}
 .menu-split .pcol .pfoot{margin-top:auto}
 .fd-card-dessert img{aspect-ratio:3/2}
-.menu-split .pcol{border-top-color:var(--ink)}
 .menu-split .prow{align-items:flex-start;padding:18px 28px}
 .menu-split .prow small{display:block;font-size:13px;color:var(--steel);margin-top:4px;font-weight:300}
 .drink-grid{gap:2px;background:rgba(10,58,82,.1);border:1px solid var(--line)}
