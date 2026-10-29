@@ -47,7 +47,7 @@ nav#nav{position:absolute;top:42px;left:0;right:0;z-index:100;display:grid;grid-
 .dd-panel a:hover{color:var(--steel)}
 .dd-panel a:hover::after{opacity:1}
 .nav-dd:hover .dropdown,.nav-dd:focus-within .dropdown{opacity:1;visibility:visible;transform:none}
-.nav-cta{border:1px solid rgba(255,255,255,.8);padding:0 16px!important;height:36px;line-height:1;font-size:11px;transition:background .4s cubic-bezier(.25,.46,.45,.94),border-color .4s cubic-bezier(.25,.46,.45,.94),opacity .25s}
+.nav-cta{border:1px solid rgba(255,255,255,.8);padding:0 16px!important;height:36px;line-height:1;font-size:11px!important;letter-spacing:.16em!important;transition:background .4s cubic-bezier(.25,.46,.45,.94),border-color .4s cubic-bezier(.25,.46,.45,.94),opacity .25s}
 .nav-cta:hover{opacity:1!important;background:var(--white);border-color:var(--white);color:var(--ink)!important}
 /* mobile utility cluster: phone + enquire + burger */
 .nav-utils{display:none;align-items:center;gap:8px}
