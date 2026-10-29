@@ -422,7 +422,8 @@ details.f-col{}
  .cards-swipe .swipe-track>.card{flex:0 0 84vw;width:84vw;scroll-snap-align:center}
  .cards-swipe .swipe-nav{display:flex}
  .hero{height:72svh;min-height:480px}
- .hero.tall{min-height:560px}
+ .hero.tall{min-height:520px}
+ .hero .eyebrow{font-size:11px;letter-spacing:.14em;margin-bottom:22px}
  .hero .btn,.band.centre .btn,.cta-band .btn{padding:11px 20px}
  .band.centre{padding:76px 22px;min-height:auto}
  .band:not(.centre) .content{padding:44px 22px}
