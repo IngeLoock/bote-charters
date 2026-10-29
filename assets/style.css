@@ -628,3 +628,40 @@ p a:not(.btn),li a:not(.btn),.fine a{display:inline-block;padding:10px 0;margin:
  .rv-quote{font-size:clamp(26px,7vw,34px)}
  .charter .statement{font-size:clamp(26px,7.5vw,34px)}
 }
+
+/* INNER PAGES 2026 */
+.steps-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.fd-tag{margin:0 0 8px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-light)}
+.band .fine{color:var(--steel)}
+.hero .actions .btn-ghost{color:var(--white);border-color:rgba(255,255,255,.85)}
+@media(max-width:1080px){.steps-3{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.steps-3{grid-template-columns:1fr}}
+
+/* rest of the inner pages */
+.rates-mini.three{grid-template-columns:repeat(3,1fr);max-width:1100px}
+.rmini .ra small{font-size:1rem;font-family:var(--sans);letter-spacing:0;margin-left:4px}
+.menu-split{display:grid;grid-template-columns:1.4fr 1fr;gap:20px;align-items:start}
+.menu-split .pcol{border-top-color:var(--ink)}
+.menu-split .prow{align-items:flex-start;padding:18px 28px}
+.menu-split .prow small{display:block;font-size:13px;color:var(--steel);margin-top:4px;font-weight:300}
+.drink-grid{gap:2px;background:rgba(10,58,82,.1)}
+.drink-grid .card h3 small{font-size:.8rem;font-family:var(--sans);letter-spacing:.04em;color:var(--steel)}
+.drink-grid .card .card-num{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-light)}
+.enq-wrap{display:grid;grid-template-columns:minmax(260px,.9fr) minmax(0,1.6fr);gap:clamp(32px,5vw,80px);align-items:start}
+.enq-side .ticklist{margin:18px 0 34px}
+.enq-steps{display:block;background:var(--sky);padding:34px;border:1px solid var(--line)}
+.enq-step{border:0;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.enq-step .fd-tag{grid-column:1/-1;margin:0 0 4px}
+.fg .lbl{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative;display:inline-flex;align-items:center;min-height:42px;padding:0 16px;border:1px solid var(--line);background:var(--white);font-size:14px;font-weight:300;letter-spacing:0;text-transform:none;opacity:1;color:var(--ink);cursor:pointer;transition:border-color .2s,background .2s}
+.enq-step[hidden],.enq-done[hidden]{display:none}
+.fg label.chip,label.chip{font-size:14px;letter-spacing:0;text-transform:none;color:var(--ink);opacity:1}
+.chip input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.chip:hover{border-color:var(--ink)}
+.chip:has(input:checked){border-color:var(--ink);background:var(--sand)}
+.chip-check{margin-top:10px;align-self:flex-start}
+.enq-actions{display:flex;gap:12px}
+.enq-done{text-align:left;padding:10px 0}
+@media(max-width:1080px){.rates-mini.three{grid-template-columns:1fr}.menu-split{grid-template-columns:1fr}.enq-wrap{grid-template-columns:1fr;gap:36px}}
+@media(max-width:640px){.enq-steps{padding:22px 16px}.enq-step{grid-template-columns:1fr}.chip{min-height:40px;padding:0 12px;font-size:13px}}
