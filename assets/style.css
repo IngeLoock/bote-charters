@@ -720,3 +720,11 @@ p a:not(.btn),li a:not(.btn),.fine a{display:inline-block;padding:10px 0;margin:
 .enq-done{text-align:left;padding:10px 0}
 @media(max-width:1080px){.rates-mini.three{grid-template-columns:1fr}.menu-split{grid-template-columns:1fr}.enq-wrap{grid-template-columns:1fr;gap:36px}}
 @media(max-width:640px){.enq-steps{padding:22px 16px}.enq-step{grid-template-columns:1fr}.chip{min-height:40px;padding:0 12px;font-size:13px}}
+
+/* Home page sections become swipe rails on phones */
+@media(max-width:640px){
+ .m-rail{display:flex;grid-template-columns:none;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:22px;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 -22px;padding:0 22px 4px;max-width:none;width:auto}
+ .m-rail::-webkit-scrollbar{display:none}
+ .m-rail>*{flex:0 0 76vw;width:76vw;scroll-snap-align:start;min-width:0}
+ .m-rail>*:last-child{margin-right:22px}
+}
