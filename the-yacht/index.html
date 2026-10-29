@@ -71,20 +71,20 @@
     <ul class="glance glance-4" aria-label="At a glance"><li><span class="g-v">80</span><span class="g-s">Feet</span></li><li><span class="g-v">60</span><span class="g-s">Guests</span></li><li><span class="g-v">3</span><span class="g-s">Areas</span></li><li><span class="g-v">AC</span><span class="g-s">Saloon below</span></li></ul>
   </div>
 </section>
-<section class="sec sec-white" id="areas">
+<section class="sec sec-sky" id="areas">
   <div class="wrap" style="margin-bottom:56px">
     <span class="eyebrow">On board</span>
     <h2>Where the day <em>happens</em>.</h2>
   </div>
   <div class="wrap steps steps-3"><div class="step"><img src="../assets/img/ref/9d6da2c65ac04b756c36c8ef887688de.webp" alt="Guests mingling on the bow with the tan sun pads behind" loading="lazy"><span class="step-n">01</span><h3>The bow</h3><p>Open sun, tan sun pads and rails all round. The photo deck.</p></div><div class="step"><img src="../assets/img/BOTE_INT-47-of-59.webp" alt="The covered aft deck lounge" loading="lazy"><span class="step-n">02</span><h3>The aft deck</h3><p>Covered lounge, dining table, the bar with fridges, and the dance floor once the table is cleared.</p></div><div class="step"><img src="../assets/img/bote-salon-1.webp" alt="The saloon with timber joinery and daybeds" loading="lazy"><span class="step-n">03</span><h3>The saloon</h3><p>Air conditioned, daybeds and a screen below. Cabins, galley and bathroom off the companionway.</p></div><div class="step"><img src="../assets/img/ref/4b768a772ead0acea4f059d7f5df0983.webp" alt="The aft deck bar with drinks fridges" loading="lazy"><span class="step-n">04</span><h3>The bar</h3><p>A fully licensed bar with cocktail service. Drinks package, bar tab or pay as you go.</p></div><div class="step"><img src="../assets/img/bote-crew-2.webp" alt="The Bote Charters crew on board" loading="lazy"><span class="step-n">05</span><h3>Crew and host</h3><p>Skipper, deckhand and an event host. An extra crew member above forty guests.</p></div><div class="step"><img src="../assets/img/ref/cebbaa03f2cb0be86de25e26f977c516.webp" alt="Bote at anchor with the swan float and water lounges out" loading="lazy"><span class="step-n">06</span><h3>At anchor</h3><p>Swim platform, inflatables and Bluetooth sound. Swimming at the skipper&rsquo;s call.</p></div></div>
 </section>
-<section class="sec sec-sky" id="gallery">
+<section class="sec sec-white" id="gallery">
   <div class="wrap" style="text-align:center;margin-bottom:56px">
     <span class="eyebrow">Gallery &middot; 52 Photographs</span>
     <h2>Life on board <em>Bote</em></h2>
     <p class="lede">Every photo below was taken on board or from our yacht: the decks, the bar, the saloon, the staterooms and the days out on Brisbane and Gold Coast waters. Click any image to view it full size.</p>
   </div>
-  <div class="wrap gal">
+  <div class="wrap gal gal-collapsed" id="galGrid">
       <a href="../assets/img/ref/ig-sunset-wrecks.webp" target="_blank" rel="noopener"><img src="../assets/img/ref/ig-sunset-wrecks.webp" alt="Bote at sunset beside the Tangalooma Wrecks" loading="lazy"></a>
       <a href="../assets/img/ref/ig-moreton-bow.webp" target="_blank" rel="noopener"><img src="../assets/img/ref/ig-moreton-bow.webp" alt="Guests on the bow at anchor off Moreton Island" loading="lazy"></a>
       <a href="../assets/img/ref/ig-hens-bow.webp" target="_blank" rel="noopener"><img src="../assets/img/ref/ig-hens-bow.webp" alt="Friends gathered on the bow at the Tangalooma Wrecks" loading="lazy"></a>
@@ -138,8 +138,9 @@
       <a href="../assets/img/botecorporate.webp" target="_blank" rel="noopener"><img src="../assets/img/botecorporate.webp" alt="Corporate event on board" loading="lazy"></a>
       <a href="../assets/img/botexmas.webp" target="_blank" rel="noopener"><img src="../assets/img/botexmas.webp" alt="Christmas party on board" loading="lazy"></a>
   </div>
+  <div style="text-align:center;margin-top:36px"><button type="button" class="btn" id="galMore">View all 52 photos</button></div>
 </section>
-<section class="sec sec-white" id="rates">
+<section class="sec sec-sky" id="rates">
   <div class="wrap" style="text-align:center;margin-bottom:48px">
     <span class="eyebrow">Rates</span>
     <h2>Fully crewed, <em>fully sorted</em>.</h2>
@@ -152,7 +153,7 @@
   <p class="fine">Skipper, crew, fuel, sound system and safety equipment included. Food and drinks priced per person on the <a href="../menu/index.html">menu page</a>.</p>
   <div style="text-align:center;margin-top:30px"><a href="../pricing/index.html" class="btn">Full rates and booking</a></div>
 </section>
-<section class="sec sec-sky" id="faqs">
+<section class="sec sec-white" id="faqs">
   <div class="wrap-narrow" style="margin-bottom:48px">
     <span class="eyebrow">Practical</span>
     <h2>Good <em>to know</em>.</h2>
@@ -363,6 +364,9 @@ function step(){var c=t.querySelector('.oc-card');return c?c.getBoundingClientRe
 function upd(){prev.disabled=t.scrollLeft<8;next.disabled=t.scrollLeft+t.clientWidth>=t.scrollWidth-8;}
 [prev,next].forEach(function(b){b.addEventListener('click',function(){t.scrollBy({left:step()*(+b.dataset.dir),behavior:'smooth'});});});
 t.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();})();
+</script>
+<script>
+(function(){var g=document.getElementById('galGrid'),b=document.getElementById('galMore');if(!g||!b)return;b.addEventListener('click',function(){g.classList.remove('gal-collapsed');b.parentNode.remove();});})();
 </script>
 </body>
 </html>
