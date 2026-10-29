@@ -238,6 +238,7 @@ nav#nav{position:absolute;top:42px;left:0;right:0;z-index:100;display:grid;grid-
 /* FAQ */
 .faq{max-width:800px;margin:0 auto;background:var(--white);border:1px solid var(--line);padding:6px 32px}
 .faq details{border-bottom:1px solid var(--line);padding:6px 0}
+.faq details:last-child{border-bottom:0}
 .faq summary{font-family:var(--sans);font-size:16px;font-weight:400;color:var(--ink);padding:20px 40px 20px 0;cursor:pointer;list-style:none;position:relative;min-height:48px;transition:color .3s}
 .faq summary:hover{color:var(--steel)}
 .faq summary::-webkit-details-marker{display:none}
@@ -637,6 +638,7 @@ p a:not(.btn),li a:not(.btn),.fine a{display:inline-block;padding:10px 0;margin:
 .fd-tag{margin:0 0 8px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-light)}
 .band .fine{color:var(--steel)}
 .hero .actions .btn-ghost{color:var(--white);border-color:rgba(255,255,255,.85)}
+.hero .actions .btn-ghost:hover{color:var(--ink);background:var(--white);border-color:var(--white)}
 @media(max-width:1080px){.steps-3{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.steps-3{grid-template-columns:1fr}}
 
