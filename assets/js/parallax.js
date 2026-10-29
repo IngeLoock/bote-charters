@@ -11,12 +11,15 @@
     var maxOffset = isMobile ? 100 : 60;
     for (var i = 0; i < els.length; i++){
       var el = els[i];
-      var r = el.getBoundingClientRect();
-      if (r.bottom < -200 || r.top > vh + 200) continue;
-      var center = (r.top + r.height / 2) - vh / 2;
+      var box = el.parentElement.getBoundingClientRect();
+      if (box.bottom < -200 || box.top > vh + 200) continue;
+      var center = (box.top + box.height / 2) - vh / 2;
       var offset = center * -strength;
-      if (offset > maxOffset) offset = maxOffset;
-      if (offset < -maxOffset) offset = -maxOffset;
+      // never shift further than the image's own overscan (scale 1.08 = 4% each side), so no gap can open
+      var avail = Math.max(0, box.height * 0.04 - 1);
+      var lim = Math.min(maxOffset, avail);
+      if (offset > lim) offset = lim;
+      if (offset < -lim) offset = -lim;
       el.style.setProperty('--py', offset.toFixed(1) + 'px');
     }
   }

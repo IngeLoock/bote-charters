@@ -80,10 +80,10 @@ nav#nav{position:absolute;top:42px;left:0;right:0;z-index:100;display:grid;grid-
 .mm-call,.mm-cta{color:var(--ink);border:1px solid var(--ink);background:transparent;transition:background .3s,color .3s}
 .mm-call:hover,.mm-cta:hover{background:var(--teal-mid);border-color:var(--teal-mid);color:var(--white)}
 /* HERO */
-.hero{position:relative;height:82vh;min-height:520px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero{position:relative;height:82vh;min-height:520px;overflow:hidden;background:var(--teal);display:flex;align-items:center;justify-content:center;text-align:center}
 .hero.tall{height:calc(100vh - 42px);height:calc(100svh - 42px);min-height:640px}
 .hero img.bg,.hero video.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-.hero img.bg,.band.centre>img.bg{transform:var(--imgtf,scale(1.04)) translateY(var(--py,0px))}
+.hero img.bg,.band.centre>img.bg{transform:var(--imgtf,scale(1.08)) translateY(var(--py,0px))}
 .hero .scrim{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,58,82,.46) 0%,rgba(10,58,82,.34) 45%,rgba(10,58,82,.5) 100%)}
 .hero.zoom img.bg{transform:var(--imgtf,scale(1.45) translateX(-11%)) translateY(var(--py,0px));object-position:center 68%}
 .hero .inner{position:relative;z-index:5;padding:0 28px;max-width:1060px}
