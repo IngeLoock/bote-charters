@@ -60,7 +60,7 @@ body.menu-open .nav-phone,body.menu-open .nav-enq{color:var(--ink);border-color:
 .nav-utils{display:none;align-items:center;gap:8px}
 .nav-phone{display:flex;align-items:center;justify-content:center;width:36px;height:36px;color:var(--white);border:1px solid rgba(255,255,255,.8);border-radius:0;text-decoration:none;transition:border-color .2s,color .2s}
 .nav-phone:hover{border-color:var(--white);color:var(--white)}
-.nav-enq{font-size:10px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--white);background:transparent;border:1px solid rgba(255,255,255,.8);text-decoration:none;padding:0 12px;display:flex;align-items:center;height:36px;transition:background .3s,color .3s}
+.nav-enq{font-size:11px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--white);background:transparent;border:1px solid rgba(255,255,255,.8);text-decoration:none;padding:0 12px;display:flex;align-items:center;height:36px;transition:background .3s,color .3s}
 .nav-enq:hover{background:var(--white);color:var(--ink)}
 .hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;z-index:200}
 .hamburger span{display:block;width:24px;height:1.5px;background:var(--white);transition:transform .35s,opacity .25s}
@@ -408,7 +408,7 @@ details.f-col{}
  .hero.has-facts{padding-bottom:84px}
  .hero-facts{left:22px;right:22px;padding:16px 0 20px}
  .hf-n{font-size:26px}
- .hf-l{font-size:10px;letter-spacing:.08em}
+ .hf-l{font-size:11px;letter-spacing:.08em}
  .sec{padding:76px 22px}
  .crumbs{padding:12px 22px}
  .grid-3,.grid-4{grid-template-columns:1fr}
@@ -596,7 +596,7 @@ p a:not(.btn),li a:not(.btn),.fine a{display:inline-block;padding:10px 0;margin:
 .rv-arrow{background:transparent;border:1px solid var(--ink);width:38px;height:38px;font-size:16px;color:var(--ink);cursor:pointer;transition:background .4s,color .4s,border-color .4s}
 .rv-arrow:hover{background:var(--teal-mid);border-color:var(--teal-mid);color:var(--white)}
 .rv-dots{display:flex;gap:8px}
-.rv-dot{width:36px;height:28px;padding:0;border:0;background:linear-gradient(var(--line),var(--line)) center/100% 1px no-repeat;cursor:pointer;transition:background-size .4s}
+.rv-dot{width:36px;height:36px;padding:0;border:0;background:linear-gradient(var(--line),var(--line)) center/100% 1px no-repeat;cursor:pointer;transition:background-size .4s}
 .rv-dot.is-on{background-image:linear-gradient(var(--teal-mid),var(--teal-mid));background-size:100% 2px}
 /* booking steps */
 .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
@@ -633,7 +633,7 @@ p a:not(.btn),li a:not(.btn),.fine a{display:inline-block;padding:10px 0;margin:
  .glance-4 .g-s{font-size:13px}
  .glance .g-label{grid-column:1/-1;padding:0 0 14px;border-left:0}
  .glance .g-v{font-size:26px}
- .glance .g-s{font-size:10px;letter-spacing:.12em;margin-top:8px}
+ .glance .g-s{font-size:11px;letter-spacing:.12em;margin-top:8px}
  .fd-head{flex-direction:column;align-items:flex-start}
  .fd-head .btn{margin-bottom:0}
  .fd-grid,.cr-grid,.steps{grid-template-columns:1fr}
@@ -695,8 +695,8 @@ p a:not(.btn),li a:not(.btn),.fine a{display:inline-block;padding:10px 0;margin:
 .ep-t{font-size:14px;line-height:1.4;color:var(--mid);font-weight:300}
 .enq-talk{margin-top:28px;display:flex;flex-direction:column;gap:6px}
 .enq-talk .eyebrow{margin-bottom:8px}
-.enq-phone{font-family:var(--serif);font-size:30px;line-height:1;color:var(--ink);text-decoration:none}
-.enq-mail{font-size:15px;color:var(--mid);text-decoration:none;font-weight:300}
+.enq-phone{font-family:var(--serif);font-size:30px;line-height:1;color:var(--ink);text-decoration:none;display:inline-block;padding:8px 0}
+.enq-mail{font-size:15px;color:var(--mid);text-decoration:none;font-weight:300;display:inline-block;padding:10px 0}
 .enq-mail:hover,.enq-phone:hover{color:var(--teal-light)}
 .enq-steps{display:block;background:var(--sky);padding:34px;border:1px solid var(--line)}
 .enq-step{border:0;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:18px}
