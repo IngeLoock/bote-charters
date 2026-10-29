@@ -46,7 +46,7 @@ nav#nav{position:absolute;top:42px;left:0;right:0;z-index:100;display:grid;grid-
 .dd-panel a:hover{color:var(--steel)}
 .dd-panel a:hover::after{opacity:1}
 .nav-dd:hover .dropdown,.nav-dd:focus-within .dropdown{opacity:1;visibility:visible;transform:none}
-.nav-cta{border:1px solid rgba(255,255,255,.8);padding:9px 16px!important;font-size:11px;transition:background .4s cubic-bezier(.25,.46,.45,.94),border-color .4s cubic-bezier(.25,.46,.45,.94),opacity .25s}
+.nav-cta{border:1px solid rgba(255,255,255,.8);padding:0 16px!important;height:36px;line-height:1;font-size:11px;transition:background .4s cubic-bezier(.25,.46,.45,.94),border-color .4s cubic-bezier(.25,.46,.45,.94),opacity .25s}
 .nav-cta:hover{opacity:1!important;background:var(--white);border-color:var(--white);color:var(--ink)!important}
 /* mobile utility cluster: phone + enquire + burger */
 .nav-utils{display:none;align-items:center;gap:8px}
@@ -286,7 +286,7 @@ details.f-col{}
 .f-col>summary h4{margin-bottom:0}
 @media(min-width:641px){details.f-col>summary{cursor:default;pointer-events:none;margin-bottom:20px}details.f-col>ul{display:flex!important}}
 /* LOCATION BUTTON + MODAL */
-.nav-loc{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;gap:7px;font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--white);background:transparent;border:1px solid rgba(255,255,255,.8);padding:9px 14px;border-radius:0;cursor:pointer;transition:background .4s cubic-bezier(.25,.46,.45,.94),color .4s cubic-bezier(.25,.46,.45,.94),border-color .4s cubic-bezier(.25,.46,.45,.94)}
+.nav-loc{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;gap:7px;font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--white);background:transparent;border:1px solid rgba(255,255,255,.8);padding:0 14px;height:36px;line-height:1;white-space:nowrap;border-radius:0;cursor:pointer;transition:background .4s cubic-bezier(.25,.46,.45,.94),color .4s cubic-bezier(.25,.46,.45,.94),border-color .4s cubic-bezier(.25,.46,.45,.94)}
 .nav-loc:hover{background:var(--white);border-color:var(--white);color:var(--ink)}
 .nav-loc svg{flex-shrink:0}
 .loc-modal{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .3s}
