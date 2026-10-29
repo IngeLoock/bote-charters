@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=20261029z">
+<link rel="stylesheet" href="assets/style.css?v=20261030a">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "LocalBusiness", "@id": "https://bote-charters.mockups.studioloock.co/#business", "name": "Bote Charters", "description": "Luxury private boat charters for parties, corporate events and celebrations across Brisbane, the Gold Coast and Moreton Bay aboard an 80ft Italian motor yacht for up to 60 guests.", "url": "https://bote-charters.mockups.studioloock.co/", "telephone": "+61 413 404 518", "email": "charter@bote.au", "image": "https://bote-charters.mockups.studioloock.co/assets/img/botedeck.webp", "logo": "https://bote-charters.mockups.studioloock.co/assets/img/botelogo.png", "priceRange": "$$$$", "address": {"@type": "PostalAddress", "addressLocality": "Brisbane", "addressRegion": "QLD", "addressCountry": "AU"}, "areaServed": [{"@type": "City", "name": "Brisbane"}, {"@type": "City", "name": "Gold Coast"}, {"@type": "Place", "name": "Moreton Bay"}], "sameAs": ["https://www.facebook.com/profile.php?id=61578392492154", "https://www.instagram.com/bote_charters"]}, {"@type": "WebSite", "name": "Bote Charters", "url": "https://bote-charters.mockups.studioloock.co/"}]}</script>
 </head>
 <body>
@@ -313,8 +313,9 @@ go(0);restart();})();
 </script>
 <script>
 const hb=document.getElementById('hamburger'),mm=document.getElementById('mobileMenu');
-hb.addEventListener('click',()=>{const o=!hb.classList.contains('open');hb.classList.toggle('open',o);mm.classList.toggle('open',o);hb.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''});
-mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hb.classList.remove('open');mm.classList.remove('open');document.body.style.overflow=''}));
+hb.addEventListener('click',()=>{const o=!hb.classList.contains('open');hb.classList.toggle('open',o);mm.classList.toggle('open',o);hb.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';document.body.classList.toggle('menu-open',o)});
+(function(){var nv=document.getElementById('nav');if(!nv)return;function s(){nv.classList.toggle('scrolled',scrollY>40);}addEventListener('scroll',s,{passive:true});s();})();
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hb.classList.remove('open');mm.classList.remove('open');document.body.style.overflow='';document.body.classList.remove('menu-open')}));
 // LOCATION MODAL
 (function(){var lm=document.getElementById('locModal');if(!lm)return;
 var frame=document.getElementById('locFrame'),pinLabel=document.getElementById('locPinLabel'),exploreLink=document.getElementById('locExplore');

@@ -203,8 +203,9 @@ dl.classList.add('dl--wait');var shown=false;var sh=function(){var past=scrollY>
 </script>
 <script>
 const hb=document.getElementById('hamburger'),mm=document.getElementById('mobileMenu');
-hb.addEventListener('click',()=>{const o=!hb.classList.contains('open');hb.classList.toggle('open',o);mm.classList.toggle('open',o);hb.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''});
-mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hb.classList.remove('open');mm.classList.remove('open');document.body.style.overflow=''}));
+hb.addEventListener('click',()=>{const o=!hb.classList.contains('open');hb.classList.toggle('open',o);mm.classList.toggle('open',o);hb.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';document.body.classList.toggle('menu-open',o)});
+(function(){var nv=document.getElementById('nav');if(!nv)return;function s(){nv.classList.toggle('scrolled',scrollY>40);}addEventListener('scroll',s,{passive:true});s();})();
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hb.classList.remove('open');mm.classList.remove('open');document.body.style.overflow='';document.body.classList.remove('menu-open')}));
 // LOCATION MODAL
 (function(){var lm=document.getElementById('locModal');if(!lm)return;
 var frame=document.getElementById('locFrame'),pinLabel=document.getElementById('locPinLabel'),exploreLink=document.getElementById('locExplore');
