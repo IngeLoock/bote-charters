@@ -39,6 +39,7 @@ body.menu-open nav#nav{background:var(--white);box-shadow:0 1px 0 var(--line)}
 body.menu-open nav#nav .nav-logo img{filter:brightness(0) saturate(100%) invert(14%) sepia(40%) saturate(1200%) hue-rotate(170deg) brightness(90%)}
 body.menu-open .hamburger span{background:var(--ink)}
 body.menu-open .nav-phone,body.menu-open .nav-enq{color:var(--ink);border-color:var(--ink)}
+body.menu-open .nav-phone:hover,body.menu-open .nav-phone:active{background:var(--ink);color:var(--white)}
 .nav-logo{display:block;padding:6px 0}
 .nav-logo img{height:38px;width:auto;transition:height .9s ease}
 .nav-side{display:flex;align-items:center;gap:clamp(16px,1.8vw,26px)}
@@ -62,7 +63,7 @@ body.menu-open .nav-phone,body.menu-open .nav-enq{color:var(--ink);border-color:
 /* mobile utility cluster: phone + enquire + burger */
 .nav-utils{display:none;align-items:center;gap:8px}
 .nav-phone{display:flex;align-items:center;justify-content:center;width:36px;height:36px;color:var(--white);border:1px solid rgba(255,255,255,.8);border-radius:0;text-decoration:none;transition:border-color .2s,color .2s}
-.nav-phone:hover{border-color:var(--white);color:var(--white)}
+.nav-phone:hover,.nav-phone:active{background:var(--white);border-color:var(--white);color:var(--teal)}
 .nav-enq{font-size:11px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--white);background:transparent;border:1px solid rgba(255,255,255,.8);text-decoration:none;padding:0 12px;display:flex;align-items:center;height:36px;transition:background .3s,color .3s}
 .nav-enq:hover{background:var(--white);color:var(--ink)}
 .hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;z-index:200}
