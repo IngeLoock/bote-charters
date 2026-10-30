@@ -631,10 +631,10 @@ p a:not(.btn),li a:not(.btn),.fine a{display:inline-block;padding:10px 0;margin:
  .glance{grid-template-columns:1fr 1fr 1fr}
  .glance li{padding:20px 0 22px 14px}
  .glance li:nth-child(2){padding-left:0;border-left:0}
- .glance-4{grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
- .glance-4 li{background:var(--white);border-left:0;padding:22px 18px}
- .glance-4 .g-s{white-space:normal;font-size:13px;margin-top:8px}
- .glance-4 .g-v{font-size:22px;white-space:normal}
+ .glance.glance-4{grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+ .glance.glance-4 li,.glance.glance-4 li:first-child,.glance.glance-4 li:nth-child(2){background:var(--white);border-left:0;padding:20px 14px 22px}
+ .glance.glance-4 .g-s{white-space:normal;font-size:12.5px;letter-spacing:.01em;margin-top:8px}
+ .glance.glance-4 .g-v{font-size:clamp(15px,4.8vw,21px);white-space:nowrap}
  .glance .g-label{grid-column:1/-1;padding:0 0 14px;border-left:0}
  .glance .g-v{font-size:26px}
  .glance .g-s{font-size:11px;letter-spacing:.12em;margin-top:8px}
@@ -728,3 +728,14 @@ p a:not(.btn),li a:not(.btn),.fine a{display:inline-block;padding:10px 0;margin:
 }
 
 @media(max-width:640px){img.bg.m-aft{object-position:57% 58%!important}}
+
+@media(max-width:360px){
+ .glance.glance-4 li,.glance.glance-4 li:first-child,.glance.glance-4 li:nth-child(2){padding:18px 10px 20px}
+ .glance.glance-4 .g-v{font-size:15.5px}
+}
+
+@media(max-width:330px){
+ .glance.glance-4 li,.glance.glance-4 li:first-child,.glance.glance-4 li:nth-child(2){padding:16px 8px 18px}
+ .glance.glance-4 .g-v{font-size:14px}
+ .glance.glance-4 .g-s{font-size:11.5px}
+}
